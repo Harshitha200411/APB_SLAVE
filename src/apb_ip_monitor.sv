@@ -34,7 +34,7 @@ task start();
 			apb_ip_mon.PWDATA = ip_vif.ip_mon_cb.PWDATA;
 			apb_ip_mon.PSTRB = ip_vif.ip_mon_cb.PSTRB;
 		end
-		$display("INPUT MONITOR \t PADDR = %0d  PSEL = %b  PENABLE = %b  PWRITE = %b  PWDATA = %0d  PSTRB = %0d",apb_ip_mon.PADDR, apb_ip_mon.PSEL, apb_ip_mon.PENABLE, apb_ip_mon.PWRITE, apb_ip_mon.PWDATA, apb_ip_mon.PSTRB);
+		$display("INPUT MONITOR \t PADDR = %0d  PSEL = %b  PENABLE = %b  PWRITE = %b  PWDATA = %h  PSTRB = %0d",apb_ip_mon.PADDR, apb_ip_mon.PSEL, apb_ip_mon.PENABLE, apb_ip_mon.PWRITE, apb_ip_mon.PWDATA, apb_ip_mon.PSTRB);
 		mb_ims.put(apb_ip_mon);
 		ip_mon_cg.sample();
 		repeat(1) @(ip_vif.ip_mon_cb);
