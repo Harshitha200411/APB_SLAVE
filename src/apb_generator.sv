@@ -11,7 +11,7 @@ task start();
 	begin
 		assert(apb_gen.randomize() == 1)
 		mb_gd.put(apb_gen.copy());
-		$display("GENERATOR \t PADDR = %0d  PSEL = %b  PENABLE = %b  PWRITE = %b  PWDATA = %0d  PSTRB = %0d",apb_gen.PADDR, apb_gen.PSEL, apb_gen.PENABLE, apb_gen.PWRITE, apb_gen.PWDATA, apb_gen.PSTRB,$time);
+		$display("GENERATOR \t PADDR = %0d  PSEL = %b  PENABLE = %b  PWRITE = %b  PWDATA = %h  PSTRB = %0d",apb_gen.PADDR, apb_gen.PSEL, apb_gen.PENABLE, apb_gen.PWRITE, apb_gen.PWDATA, apb_gen.PSTRB,$time);
 	end
 endtask
 endclass
