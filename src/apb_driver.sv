@@ -26,7 +26,7 @@ class apb_driver;
       vif.drv_cb.PWRITE  <= 0;
       vif.drv_cb.PWDATA  <= 0;
       vif.drv_cb.PSTRB   <= 0;
-      $display("DRIVER \t RESET ASSERTED \t PADDR = %0d  PSEL = %b  PENABLE = %b  PWRITE = %b  PWDATA = %0d  PSTRB = %0d  TIME = %0t",
+      $display("DRIVER \t RESET ASSERTED \t PADDR = %0d  PSEL = %b  PENABLE = %b  PWRITE = %b  PWDATA = %h  PSTRB = %0d  TIME = %0t",
                 vif.drv_cb.PADDR, vif.drv_cb.PSEL, vif.drv_cb.PENABLE, vif.drv_cb.PWRITE, vif.drv_cb.PWDATA, vif.drv_cb.PSTRB, $time);
       @(posedge vif.PRESETn);
     end
@@ -49,7 +49,7 @@ class apb_driver;
         vif.drv_cb.PWDATA  <= apb_drv.PWDATA;
         vif.drv_cb.PSTRB   <= apb_drv.PSTRB;
         @(vif.drv_cb);
-        $display("DRIVER \t PADDR = %0d  PSEL = %b  PENABLE = %b  PWRITE = %b  PWDATA = %0d  PSTRB = %0d  TIME = %0t",
+        $display("DRIVER \t PADDR = %0d  PSEL = %b  PENABLE = %b  PWRITE = %b  PWDATA = %h  PSTRB = %0d  TIME = %0t",
                   vif.drv_cb.PADDR, vif.drv_cb.PSEL, vif.drv_cb.PENABLE, vif.drv_cb.PWRITE, vif.drv_cb.PWDATA, vif.drv_cb.PSTRB, $time);
       end
     end
