@@ -24,7 +24,7 @@ task start();
 			apb_mon.PREADY = vif.mon_cb.PREADY;
 			apb_mon.PSLVERR = vif.mon_cb.PSLVERR;
 		end
-		$display("OUTPUT MONITOR \t PRDATA = %0d PREADY = %b PSLVERR = %b",apb_mon.PRDATA, apb_mon.PREADY, apb_mon.PSLVERR);
+		$display("OUTPUT MONITOR \t PRDATA = %h PREADY = %b PSLVERR = %b",apb_mon.PRDATA, apb_mon.PREADY, apb_mon.PSLVERR);
 		mb_ms.put(apb_mon);
 		mon_cg.sample();
 		repeat(1) @(vif.mon_cb);
