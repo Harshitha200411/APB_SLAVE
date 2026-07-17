@@ -57,17 +57,17 @@ endtask
 task compare();
 	if((apb_ims.PRDATA == apb_ms.PRDATA) && (apb_ims.PREADY = apb_ms.PREADY) && (apb_ims.PSLVERR == apb_ms.PSLVERR))
 	begin
-		$display("REFERENCE MATCHED DATA \t PRDATA = %0d PREADY = %b PSLVERR = %b", apb_ims.PRDATA, apb_ims.PREADY, apb_ims.PSLVERR);
-		$display("DUT MATCHED DATA \t PRDATA = %0d PREADY = %b PSLVERR = %b", apb_ms.PRDATA, apb_ms.PREADY, apb_ms.PSLVERR);
+		$display("REFERENCE MATCHED DATA \t PRDATA = %h PREADY = %b PSLVERR = %b", apb_ims.PRDATA, apb_ims.PREADY, apb_ims.PSLVERR);
+		$display("DUT MATCHED DATA \t PRDATA = %h PREADY = %b PSLVERR = %b", apb_ms.PRDATA, apb_ms.PREADY, apb_ms.PSLVERR);
 		match++;
 		$display("MATCHED COUNT = %d",match);
 	end
 	else
 	begin
-		$display("REFERENCE MISMATCHED DATA \t PRDATA = %0d PREADY = %b PSLVERR = %b", apb_ims.PRDATA, apb_ims.PREADY, apb_ims.PSLVERR);
-		$display("DUT MISMATCHED DATA \t PRDATA = %0d PREADY = %b PSLVERR = %b", apb_ms.PRDATA, apb_ms.PREADY, apb_ms.PSLVERR);
-		match++;
-		$display("MISMATCHED COUNT = %d",match);
+		$display("REFERENCE MISMATCHED DATA \t PRDATA = %h PREADY = %b PSLVERR = %b", apb_ims.PRDATA, apb_ims.PREADY, apb_ims.PSLVERR);
+		$display("DUT MISMATCHED DATA \t PRDATA = %h PREADY = %b PSLVERR = %b", apb_ms.PRDATA, apb_ms.PREADY, apb_ms.PSLVERR);
+		mismatch++;
+		$display("MISMATCHED COUNT = %d",mismatch);
 	end
 endtask
 endclass
